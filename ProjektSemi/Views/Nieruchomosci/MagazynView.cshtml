@@ -1,0 +1,84 @@
+﻿@model ProjektSemi.Models.Nieruchomosci
+
+<div>
+    <h4>Nieruchomosci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Powierzchnia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Powierzchnia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CzySprzedane)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CzySprzedane)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.magazyn.PomieszczeniaSanitarne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.magazyn.PomieszczeniaSanitarne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.magazyn.RokBudowy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.magazyn.RokBudowy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.magazyn.CzyTerenStrzeżony)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.magazyn.CzyTerenStrzeżony)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

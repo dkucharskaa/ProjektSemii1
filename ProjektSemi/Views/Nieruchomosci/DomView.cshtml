@@ -1,0 +1,92 @@
+﻿@model ProjektSemi.Models.Nieruchomosci
+
+<div>
+    <h4>Nieruchomosci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Powierzchnia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Powierzchnia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CzySprzedane)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CzySprzedane)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dom.Garaż)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dom.Garaż)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dom.Taras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dom.Taras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dom.Balkon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dom.Balkon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dom.Piętra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dom.Piętra)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

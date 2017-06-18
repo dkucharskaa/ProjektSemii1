@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjektSemi.Models.Nieruchomosci>
+@model PagedList.IPagedList<ProjektSemi.Models.Nieruchomosci>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Baza Nieruchomości</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Szukaj: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Szukaj" />
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Dodaj nowy", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nazwa", "Index", new { sortOrder = ViewBag.NameSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Kategoria", "Index", new { sortOrder = ViewBag.CategorySort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Adres", "Index", new { sortOrder = ViewBag.AddressSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Cena", "Index", new { sortOrder = ViewBag.PriceSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Powierzchnia", "Index", new { sortOrder = ViewBag.SurfaceSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CzySprzedane)
+        </th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Powierzchnia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CzySprzedane)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
